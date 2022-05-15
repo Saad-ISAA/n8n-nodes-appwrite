@@ -1,10 +1,26 @@
 # n8n-nodes-appwrite
 
-![n8n.io - Workflow Automation](https://raw.githubusercontent.com/n8n-io/n8n/master/assets/n8n-logo.png)
+<br />
+<p align="center">
+    <a href="https://appwrite.io" target="_blank"><img width="260" height="" src="https://raw.githubusercontent.com/n8n-io/n8n/master/assets/n8n-logo.png" alt="Appwrite Logo"></a>
+    <br />
+    <br />
+    <b>Free and open fair-code licensed node based Workflow Automation Tool.</b>
+    <br />
+    <br />
+</p>
 
-n8n node for Appwrite
-![Appwrite](https://github.com/appwrite/appwrite/blob/master/public/images/github-logo.png)
+<br />
+<p align="center">
+    <a href="https://appwrite.io" target="_blank"><img width="260" height="" src="https://appwrite.io/images/appwrite.svg" alt="Appwrite Logo"></a>
+    <br />
+    <br />
+    <b>A complete backend solution for your [Flutter / Vue / Angular / React / iOS / Android / *ANY OTHER*] app</b>
+    <br />
+    <br />
+</p>
 
+<img src="/n8n-appwrite-node.png" alt="appwrite-node"/>
 ## License
 
 [Apache 2.0 with Commons Clause](https://github.com/n8n-io/n8n/blob/master/packages/nodes-base/LICENSE.md)
