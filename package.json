@@ -1,7 +1,10 @@
 {
   "name": "n8n-nodes-appwrite",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "n8n node module for appwrite.io",
+  "keywords": [
+    "n8n-community-node-package"
+  ],
   "license": "SEE LICENSE IN LICENSE.md",
   "homepage": "https://n8n.io",
   "author": {
