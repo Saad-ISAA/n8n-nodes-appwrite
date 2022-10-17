@@ -104,6 +104,8 @@ export class Appwrite implements INodeType {
 			if (resource === 'document') {
 
 				if (operation === 'createDoc') {
+					// get databaseId input
+					const databaseId = this.getNodeParameter('databaseId', 0) as string;
 
 					// get collectionID input
 					const collectionId = this.getNodeParameter('collectionId', 0) as string;
@@ -113,11 +115,13 @@ export class Appwrite implements INodeType {
 						data: this.getNodeParameter('body', 0) as IDataObject,
 					};
 
-					responseData = await appwriteApiRequest.call(this, 'POST', collectionId, '', body);
+					responseData = await appwriteApiRequest.call(this, 'POST', databaseId, collectionId, '', body);
 					returnData.push(responseData);
 				}
 
 				if (operation === 'getAllDocs') {
+					// get databaseId input
+					const databaseId = this.getNodeParameter('databaseId', 0) as string;
 
 					// get collectionID input
 					const collectionId = this.getNodeParameter('collectionId', 0) as string;
@@ -138,22 +142,27 @@ export class Appwrite implements INodeType {
 							qs.cursorDirection = optionalFields.cursorDirection;
 					}
 
-					responseData = await appwriteApiRequest.call(this, 'GET', collectionId, '', {}, qs);
+					responseData = await appwriteApiRequest.call(this, 'GET', databaseId, collectionId, '', {}, qs);
 					returnData.push(responseData);
 				}
 
 				if (operation === 'getDoc') {
+
+					// get databaseId input
+					const databaseId = this.getNodeParameter('databaseId', 0) as string;
 
 					// get collectionID input
 					const collectionId = this.getNodeParameter('collectionId', 0) as string;
 					// get documentID input
 					const documentId = this.getNodeParameter('documentId', 0) as string;
 
-					responseData = await appwriteApiRequest.call(this, 'GET', collectionId, documentId);
+					responseData = await appwriteApiRequest.call(this, 'GET',databaseId, collectionId, documentId);
 					returnData.push(responseData);
 				}
 
 				if (operation === 'updateDoc') {
+					// get databaseId input
+					const databaseId = this.getNodeParameter('databaseId', 0) as string;
 
 					// get collectionID input
 					const collectionId = this.getNodeParameter('collectionId', 0) as string;
@@ -164,18 +173,20 @@ export class Appwrite implements INodeType {
 						data: this.getNodeParameter('body', 0) as IDataObject,
 					};
 
-					responseData = await appwriteApiRequest.call(this, 'PATCH', collectionId, documentId, body);
+					responseData = await appwriteApiRequest.call(this, 'PATCH',databaseId, collectionId, documentId, body);
 					returnData.push(responseData);
 				}
 
 				if (operation === 'deleteDoc') {
+					// get databaseId input
+					const databaseId = this.getNodeParameter('databaseId', 0) as string;
 
 					// get collectionID input
 					const collectionId = this.getNodeParameter('collectionId', 0) as string;
 					// get documentID input
 					const documentId = this.getNodeParameter('documentId', 0) as string;
 
-					responseData = await appwriteApiRequest.call(this, 'DELETE', collectionId, documentId);
+					responseData = await appwriteApiRequest.call(this, 'DELETE', databaseId, collectionId, documentId);
 					returnData.push(responseData);
 				}
 			}

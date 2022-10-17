@@ -49,6 +49,28 @@ export const documentOperations: INodeProperties[] = [
 
 export const documentFields: INodeProperties[] = [
 	{
+		displayName: 'Database ID',
+		name: 'databaseId',
+		type: 'string',
+		required: true,
+		displayOptions: {
+				show: {
+						operation: [
+								'createDoc',
+								'getAllDocs',
+								'getDoc',
+								'updateDoc',
+								'deleteDoc',
+						],
+						resource: [
+								'document',
+						],
+				},
+		},
+		default:'',
+		description:'Database ID in which transaction will be performed',
+	},
+	{
 		displayName: 'Collection ID',
 		name: 'collectionId',
 		type: 'string',
