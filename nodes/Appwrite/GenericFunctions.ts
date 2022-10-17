@@ -13,7 +13,7 @@ import {
 	IDataObject, NodeApiError,
 } from 'n8n-workflow';
 
-export async function appwriteApiRequest(this: IExecuteFunctions | ILoadOptionsFunctions | IHookFunctions | IWebhookFunctions, method: string, collectionId: string, documentId: string, body: any = {}, qs: IDataObject = {}, uri?: string, headers: IDataObject = {}): Promise<any> { // tslint:disable-line:no-any
+export async function appwriteApiRequest(this: IExecuteFunctions | ILoadOptionsFunctions | IHookFunctions | IWebhookFunctions, method: string, databaseId:string, collectionId: string, documentId: string, body: any = {}, qs: IDataObject = {}, uri?: string, headers: IDataObject = {}): Promise<any> { // tslint:disable-line:no-any
 
 	const credentials = await this.getCredentials('appwriteApi') as IDataObject;
 
@@ -28,7 +28,7 @@ export async function appwriteApiRequest(this: IExecuteFunctions | ILoadOptionsF
 			method,
 			body,
 			qs,
-			uri: uri || `${credentials.url}/v1/database/collections/${collectionId}/documents`,
+			uri: uri || `${credentials.url}/v1/databases/${databaseId}/collections/${collectionId}/documents`,
 			json: true,
 			qsStringifyOptions: {
 				arrayFormat: 'indice',
