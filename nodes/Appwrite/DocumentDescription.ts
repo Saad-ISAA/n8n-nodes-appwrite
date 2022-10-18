@@ -100,6 +100,7 @@ export const documentFields: INodeProperties[] = [
 		displayOptions: {
 				show: {
 						operation: [
+								'createDoc',
 								'getDoc',
 								'updateDoc',
 								'deleteDoc',
@@ -109,8 +110,8 @@ export const documentFields: INodeProperties[] = [
 						],
 				},
 		},
-		default:'',
-		description:'Document ID to get from collection',
+		default:'unique()',
+		description:'Document ID for collection | For creating unique() is used for generating unique ID, it can be modified for custom document Id',
 	},
 	{
 		displayName: 'Body',

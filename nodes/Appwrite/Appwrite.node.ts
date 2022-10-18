@@ -111,7 +111,7 @@ export class Appwrite implements INodeType {
 					const collectionId = this.getNodeParameter('collectionId', 0) as string;
 
 					const body: IDataObject = {
-						documentId: 'unique()',
+						documentId: this.getNodeParameter('documentId', 0) as string,
 						data: this.getNodeParameter('body', 0) as IDataObject,
 					};
 
